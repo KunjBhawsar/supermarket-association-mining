@@ -1,0 +1,30 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.deps_ready
+backend/data_store/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Local setup marker
+.setup_complete
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Editors / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --color-ink-950: #080B14;
+  --color-ink-900: #0F172A;
+  --color-ink-850: #131B2E;
+  --color-ink-800: #16213A;
+  --color-ink-700: #1E2B47;
+  --color-ink-600: #2B3B5C;
+  --color-ink-400: #5B6C8F;
+  --color-ink-200: #A8B4CC;
+
+  --color-mist-50: #F7F9FC;
+  --color-mist-100: #EEF1F8;
+  --color-mist-200: #E7ECF5;
+
+  --color-leaf-500: #2FBF71;
+  --color-leaf-400: #4FD98A;
+  --color-leaf-600: #22A05D;
+
+  --color-amber-500: #F5A623;
+  --color-coral-500: #EF6461;
+  --color-plum-500: #8B6FD9;
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-600);
+  border-radius: 999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-ink-600);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-400);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.4s ease-out both;
+}
+
+/* Keep native dropdown options readable in both light and dark themes. */
+.app-select {
+  color-scheme: light;
+  color: var(--color-ink-900);
+  background-color: var(--color-mist-50);
+}
+
+.dark .app-select {
+  color-scheme: dark;
+  color: var(--color-mist-50);
+  background-color: var(--color-ink-850);
+}
+
+.app-select option {
+  background-color: var(--color-mist-50);
+  color: var(--color-ink-900);
+}
+
+.dark .app-select option {
+  background-color: var(--color-ink-850);
+  color: var(--color-mist-50);
+}
+
+
+/* Consistent, print-friendly chart typography: bold axis titles, ticks and legends. */
+.recharts-cartesian-axis-tick-value {
+  font-weight: 800 !important;
+  font-size: 11px !important;
+}
+.recharts-label {
+  font-weight: 800 !important;
+  font-size: 11px !important;
+}
+.recharts-legend-item-text {
+  font-weight: 800 !important;
+  font-size: 11px !important;
+}
